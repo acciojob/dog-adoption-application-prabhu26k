@@ -1,6 +1,8 @@
-ocument.addEventListener('DOMContentLoaded', () => {
+// script.js
+
+document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('adoptionForm');
-    const messageBox = document.getElementById('messageBox');
+    const messageBox = document.getElementById('messageBox'); // Get the message box element
 
     form.addEventListener('submit', (event) => {
         event.preventDefault(); // Prevent default form submission
@@ -17,6 +19,7 @@ ocument.addEventListener('DOMContentLoaded', () => {
         console.log('Form Submitted Data:', formData); // Log data to console for verification
 
         // Simulate a successful submission
+        // Instead of alert(), we use the custom showMessage function
         showMessage('Application submitted successfully!', 'success');
 
         // You would typically send this data to a server here using fetch or XMLHttpRequest
@@ -43,20 +46,24 @@ ocument.addEventListener('DOMContentLoaded', () => {
     });
 
     /**
-     * Displays a message in the message box.
+     * Displays a message in the message box element.
+     * This function is used instead of alert() for better user experience within the environment.
      * @param {string} message - The message to display.
-     * @param {string} type - The type of message ('success' or 'error').
+     * @param {string} type - The type of message ('success' or 'error'), used for styling.
      */
     function showMessage(message, type) {
-        messageBox.textContent = message;
-        messageBox.className = `mt-4 p-4 rounded-lg text-white text-center ${type}`; // Apply type-specific class
-        messageBox.classList.remove('hidden'); // Show the message box
+        messageBox.textContent = message; // Set the message text
+        // Apply appropriate CSS classes for styling (e.g., green for success, red for error)
+        messageBox.className = `mt-4 p-4 rounded-lg text-white text-center ${type}`;
+        messageBox.classList.remove('hidden'); // Make the message box visible
 
-        // Hide the message after 5 seconds
+        // Hide the message box after 5 seconds
         setTimeout(() => {
-            messageBox.classList.add('hidden');
-            messageBox.textContent = ''; // Clear message
-            messageBox.className = 'mt-4 p-4 rounded-lg text-white text-center hidden'; // Reset classes
-        }, 5000);
+            messageBox.classList.add('hidden'); // Hide the message box
+            messageBox.textContent = ''; // Clear the message text
+            // Reset the classes to hidden state
+            messageBox.className = 'mt-4 p-4 rounded-lg text-white text-center hidden';
+        }, 5000); // Message will disappear after 5 seconds
     }
 });
+
