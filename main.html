@@ -1,65 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dog Adoption Application</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Link to Inter font from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Dog Adoption Application</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="form-container">
-        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Dog Adoption Application</h1>
-        <form id="adoptionForm" class="space-y-6">
-            <!-- Name Field -->
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Name" required>
-            </div>
 
-            <!-- Phone Number Field -->
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
-            </div>
+  <div class="form-container">
+    <h2>Dog Adoption Application</h2>
 
-            <!-- Address Field -->
-            <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" id="address" name="address" placeholder="Address" required>
-            </div>
+    <form id="dogAdoptionForm">
+      
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Name" required>
 
-            <!-- Checkbox: Have you ever lived with a Dog before? -->
-            <div class="form-group flex items-center">
-                <input type="checkbox" id="checkbox" name="hasLivedWithDog" value="true">
-                <label for="checkbox" class="mb-0 cursor-pointer">Have you ever lived with a Dog before?</label>
-            </div>
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
 
-            <!-- Multi-select: Preferred Breeds -->
-            <div class="form-group">
-                <label for="select">Please select your preferred breeds</label>
-                <select id="select" name="preferredBreeds" multiple required>
-                    <option value="Golden Retriever">Golden Retriever</option>
-                    <option value="Labrador Retriever">Labrador Retriever</option>
-                    <option value="German Shepherd">German Shepherd</option>
-                    <option value="Beagle">Beagle</option>
-                    <option value="Poodle">Poodle</option>
-                    <option value="Bulldog">Bulldog</option>
-                    <option value="Dachshund">Dachshund</option>
-                </select>
-            </div>
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" placeholder="Address" required>
 
-            <!-- Submit Button -->
-            <button type="submit" id="submit">Submit</button>
-        </form>
-        <div id="messageBox" class="mt-4 p-4 rounded-lg text-white text-center hidden"></div>
-    </div>
+      <div class="checkbox-group">
+        <input type="checkbox" id="livedWithDog" name="livedWithDog" value="Have you ever lived with a Dog before?">
+        <label for="livedWithDog">Have you ever lived with a Dog before?</label>
+      </div>
 
-    <!-- Link to external JavaScript file -->
-    <script src="script.js"></script>
+      <label for="breeds">Please select your preferred breeds</label>
+      <select id="breeds" name="breeds[]" multiple required>
+        <option value="Labrador">Labrador</option>
+        <option value="German Shepherd">German Shepherd</option>
+        <option value="Golden Retriever">Golden Retriever</option>
+      </select>
+
+      <input type="submit" value="Submit">
+      
+    </form>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
