@@ -1,4 +1,4 @@
-document.getElementById('adoptionForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  alert("Form submitted successfully!");
+document.getElementby(dogAdoptionForm).addEventListener('submit',function(event){
+	event.preventDefault();
+	alert("your form is submitted");
 });

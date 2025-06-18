@@ -9,8 +9,9 @@
 
   <div class="form-container">
     <h2>Dog Adoption Application</h2>
-    <form id="adoptionForm">
 
+    <form id="dogAdoptionForm">
+      
       <label for="name">Name</label>
       <input type="text" id="name" name="name" placeholder="Name" required>
 
@@ -20,7 +21,7 @@
       <label for="address">Address</label>
       <input type="text" id="address" name="address" placeholder="Address" required>
 
-      <div class="checkbox-container">
+      <div class="checkbox-group">
         <input type="checkbox" id="livedWithDog" name="livedWithDog" value="Have you ever lived with a Dog before?">
         <label for="livedWithDog">Have you ever lived with a Dog before?</label>
       </div>
@@ -30,11 +31,10 @@
         <option value="Labrador">Labrador</option>
         <option value="German Shepherd">German Shepherd</option>
         <option value="Golden Retriever">Golden Retriever</option>
-        <option value="Pug">Pug</option>
-        <option value="Beagle">Beagle</option>
       </select>
 
       <input type="submit" value="Submit">
+      
     </form>
   </div>
 
