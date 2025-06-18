@@ -1,42 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dog Adoption Application</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Adoption Application</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h2>Dog Adoption Application</h2>
-    <form id="dogAdoptionForm">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" placeholder="Name" required />
+    <div class="form-container">
+        <h2>Dog Adoption Application</h2>
+        <form id="adoptionForm" class="adoption-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Name" required>
+            </div>
 
-      <label for="phone">Phone Number</label>
-      <input type="text" id="phone" name="phone" placeholder="Phone Number" required />
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+            </div>
 
-      <label for="address">Address</label>
-      <input type="text" id="address" name="address" placeholder="Address" required />
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" placeholder="Address" required></textarea>
+            </div>
 
-      <div class="checkbox-label">
-        <input type="checkbox" id="livedWithDog" name="livedWithDog" value="Have you ever lived with a Dog before?" />
-        <label for="livedWithDog">Have you ever lived with a Dog before?</label>
-      </div>
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="hasLivedWithDog" name="hasLivedWithDog">
+                    Have you ever lived with a Dog before?
+                </label>
+            </div>
 
-      <label>Please select your preferred breeds (max 2)</label>
-      <div class="breeds">
-        <label><input type="checkbox" name="breeds" value="Labrador" class="breed-checkbox"> Labrador</label><br>
-        <label><input type="checkbox" name="breeds" value="German Shepherd" class="breed-checkbox"> German Shepherd</label><br>
-        <label><input type="checkbox" name="breeds" value="Golden Retriever" class="breed-checkbox"> Golden Retriever</label><br>
-        <label><input type="checkbox" name="breeds" value="Beagle" class="breed-checkbox"> Beagle</label><br>
-        <label><input type="checkbox" name="breeds" value="Bulldog" class="breed-checkbox"> Bulldog</label>
-      </div>
+            <div class="form-group">
+                <label for="preferredBreeds">Please select your preferred breeds:</label>
+                <select id="preferredBreeds" name="preferredBreeds" multiple required>
+                    <option value="Labrador Retriever">Labrador Retriever</option>
+                    <option value="German Shepherd">German Shepherd</option>
+                    <option value="Golden Retriever">Golden Retriever</option>
+                    <option value="French Bulldog">French Bulldog</option>
+                    <option value="Bulldog">Bulldog</option>
+                </select>
+                <small>Hold Ctrl (Windows) or Command (Mac) to select multiple breeds</small>
+            </div>
 
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-
-  <script src="script.js"></script>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
