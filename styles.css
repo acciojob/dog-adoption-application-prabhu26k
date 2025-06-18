@@ -46,6 +46,7 @@ select {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 textarea {
@@ -93,6 +94,35 @@ small {
 
 .submit-button:hover {
     background-color: #45a049;
+}
+
+/* Error message styling */
+.error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Invalid input styling */
+input:invalid,
+textarea:invalid,
+select:invalid {
+    border-color: #dc3545;
+}
+
+input:invalid:focus,
+textarea:invalid:focus,
+select:invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.2);
+}
+
+/* Show error message when input is invalid */
+input:invalid + .error-message,
+textarea:invalid + .error-message,
+select:invalid + .error-message {
+    display: block;
 }
 
 /* Focus states */

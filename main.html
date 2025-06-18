@@ -9,32 +9,67 @@
 <body>
     <div class="form-container">
         <h2>Dog Adoption Application</h2>
-        <form id="adoptionForm" class="adoption-form">
+        <form id="adoptionForm" class="adoption-form" novalidate>
             <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Name" required>
+                <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    placeholder="Name" 
+                    required 
+                    minlength="2"
+                    pattern="[A-Za-z\s]+"
+                    title="Please enter a valid name (letters and spaces only)"
+                >
+                <span class="error-message" id="nameError"></span>
             </div>
 
             <div class="form-group">
                 <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone" 
+                    placeholder="Phone Number (e.g., 123-456-7890)" 
+                    required
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    title="Please enter a valid phone number (e.g., 123-456-7890)"
+                >
+                <span class="error-message" id="phoneError"></span>
             </div>
 
             <div class="form-group">
                 <label for="address">Address:</label>
-                <textarea id="address" name="address" placeholder="Address" required></textarea>
+                <textarea 
+                    id="address" 
+                    name="address" 
+                    placeholder="Address" 
+                    required
+                    minlength="10"
+                ></textarea>
+                <span class="error-message" id="addressError"></span>
             </div>
 
             <div class="form-group checkbox-group">
                 <label>
-                    <input type="checkbox" id="hasLivedWithDog" name="hasLivedWithDog">
+                    <input 
+                        type="checkbox" 
+                        id="hasLivedWithDog" 
+                        name="hasLivedWithDog"
+                    >
                     Have you ever lived with a Dog before?
                 </label>
             </div>
 
             <div class="form-group">
                 <label for="preferredBreeds">Please select your preferred breeds:</label>
-                <select id="preferredBreeds" name="preferredBreeds" multiple required>
+                <select 
+                    id="preferredBreeds" 
+                    name="preferredBreeds" 
+                    multiple 
+                    required
+                >
                     <option value="Labrador Retriever">Labrador Retriever</option>
                     <option value="German Shepherd">German Shepherd</option>
                     <option value="Golden Retriever">Golden Retriever</option>
@@ -42,6 +77,7 @@
                     <option value="Bulldog">Bulldog</option>
                 </select>
                 <small>Hold Ctrl (Windows) or Command (Mac) to select multiple breeds</small>
+                <span class="error-message" id="breedsError"></span>
             </div>
 
             <button type="submit" class="submit-button">Submit</button>
