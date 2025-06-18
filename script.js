@@ -1,4 +1,4 @@
-document.getElementById('breeds').addEventListener('change', function () {
+document.getElementById('breeds').addEventListener('change', function () {Add commentMore actions
   const selected = Array.from(this.selectedOptions);
   if (selected.length > 2) {
     selected[selected.length - 1].selected = false;
@@ -13,15 +13,7 @@ document.getElementById('dogAdoptionForm').addEventListener('submit', function(e
   const phone = document.getElementById('phone').value;
   const address = document.getElementById('address').value;
   const livedWithDog = document.getElementById('livedWithDog').checked;
+  
 
   const breedOptions = document.getElementById('breeds').selectedOptions;
   const selectedBreeds = Array.from(breedOptions).map(option => option.value);
-
-  console.log("Name:", name);
-  console.log("Phone:", phone);
-  console.log("Address:", address);
-  console.log("Lived with dog before:", livedWithDog);
-  console.log("Preferred breeds:", selectedBreeds);
-
-  alert("Your form is submitted successfully!");
-});
